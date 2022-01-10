@@ -1,7 +1,7 @@
 Find the output of the code snippets below:
 
 ```js
-console.log(numA + numB); //OUTPUT
+console.log(numA + numB); // NaN
 var numA = 21,
   numB = 30;
 ```
@@ -9,23 +9,25 @@ var numA = 21,
 Find the output of the code snippets below:
 
 ```js
-console.log(numA + numB); //OUTPUT
+console.log(numA + numB); // OUTPUT
 let numA = 21,
   numB = 30;
 ```
+
+`ReferenceError: numA is not defined`
 
 Find the output of the code snippets below:
 
 ```js
 let numA = 21,
   numB = 30;
-console.log(numA + numB); //OUTPUT
+console.log(numA + numB); // 51
 ```
 
 Find the output of the code snippets below:
 
 ```js
-console.log(sayHello()); // OUTPUT
+console.log(sayHello()); // undefined
 function sayHello() {
   console.log("Hey");
 }
@@ -38,7 +40,7 @@ Find the output of the code snippets below:
 
 ```js
 let username = "Tyrion";
-sayHello(); // OUTPUT
+sayHello(); // Tyrion
 function sayHello() {
   console.log(username);
 }
@@ -54,6 +56,8 @@ function sayHello() {
 }
 ```
 
+`ReferenceError: username is not defined`
+
 Find the output of the code snippets below:
 
 ```js
@@ -64,6 +68,8 @@ let sayHello = () => {
 };
 ```
 
+`ReferenceError: sayHello is not defined`
+
 Find the output of the code snippets below:
 
 ```js
@@ -74,6 +80,8 @@ let sayHello = () => {
 };
 ```
 
+`ReferenceError: sayHello is not defined`
+
 Find the output of the code snippets below:
 
 ```js
@@ -84,6 +92,8 @@ let sayHello = () => {
 };
 ```
 
+`ReferenceError: sayHello is not defined`
+
 Find the output of the code snippets below:
 
 ```js
@@ -93,6 +103,8 @@ let sayHello = () => {
   console.log(username);
 };
 ```
+
+`ReferenceError: sayHello is not defined`
 
 Find the output of the code snippets below:
 
@@ -102,7 +114,7 @@ let sayHello = () => {
   console.log(username);
   var username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); // undefined
 ```
 
 Find the output of the code snippets below:
@@ -113,7 +125,7 @@ let sayHello = () => {
   var username = "John";
   console.log(username);
 };
-sayHello(); // OUTPUT
+sayHello(); // John
 ```
 
 Find the output of the code snippets below:
@@ -126,3 +138,5 @@ let sayHello = () => {
 };
 sayHello(); // OUTPUT
 ```
+
+`ReferenceError: Cannot access 'username' before initialization at sayHello`
