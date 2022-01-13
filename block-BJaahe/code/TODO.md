@@ -73,15 +73,15 @@ When `forEach` function is called it returns another function. When the returned
 
 ```js
 function forEach(arr) {
-  let index = 0;
-  let next = function () {
+  let index = -1;
+  let element = function () {
     index++;
     return arr[index];
   };
-  return next;
+  return element;
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -95,7 +95,8 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  let addPrefix = (prefix) => `${prefix} ${title}`;
+  return addPrefix;
 }
 
 let sales = addDesignation("Salesman");
@@ -113,8 +114,20 @@ manager("Head"); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(currentSalary) {
+  return {
+    raise: function () {
+      currentSalary += 500;
+      return currentSalary;
+    },
+    lower: function () {
+      currentSalary -= 500;
+      return currentSalary;
+    },
+    current: function () {
+      return currentSalary;
+    },
+  };
 }
 
 let sam = changeSalary(2000);
@@ -131,7 +144,13 @@ arya.lower(); // 3500
 - `setLastName`: accepts a parameter last name using which updates the firstName and return the updated full name
 
 ```js
-// Your code goes here
+function nameFactory(firstName, lastName) {
+  return {
+    getFullName: () => `${firstName} ${lastName}`,
+    setFirstName: (firstName) => `${firstName} ${lastName}`,
+    setLastName: (lastName) => `${firstName} ${lastName}`,
+  };
+}
 
 let arya = nameFactory("Arya", "Stark");
 arya.getFullName(); // "Arya Stark"
@@ -144,8 +163,9 @@ arya.setLastName("Lannister"); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag() {
-  // your code goes here
+function createTag(elementName) {
+  let tag = (children) => `<${elementName}>${children}<${elementName}>`;
+  return tag;
 }
 
 let bold = createTag("b");
