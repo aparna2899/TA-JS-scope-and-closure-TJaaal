@@ -55,14 +55,14 @@ function intersection(arrayOne, arrayTwo, arrayThree) {
   let result2 = filterArray(result1, arrayThree);
   return result2;
 }
-function filter(a, b) {
-  let c = [];
-  for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j < b.length; j++) {
-      if (a[i] == b[j]) c.push(a[i]);
+function filterArray(arr1, arr2) {
+  let final = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] == arr2[j]) final.push(arr1[i]);
     }
   }
-  return c;
+  return final;
 }
 // Test
 console.log(
@@ -73,7 +73,8 @@ console.log(
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {}
+function union(arrayOne, arrayTwo, arrayThree) {}
+function unionArray(arr1, arr2) {}
 
 // Test
 console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
